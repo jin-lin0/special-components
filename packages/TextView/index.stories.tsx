@@ -5,6 +5,8 @@ export default {
   title: "TextView",
 };
 
-export const WithTextView = () => (
+export const WithPureText = () => (
   <TextView>This is my test component</TextView>
 );
+
+export const TTTextView = () => <TextView>aaa</TextView>;
