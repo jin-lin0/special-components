@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   stories: ["../packages/**/*.stories.tsx"],
   addons: ["@storybook/addon-essentials"],
+
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.less$/,
@@ -20,4 +21,13 @@ module.exports = {
 
     return config;
   },
+
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
 };

@@ -1,28 +1,24 @@
 import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Button from "./index";
 
-export default {
-  title: "Button",
+const meta: Meta<typeof Button> = {
   component: Button,
-  argTypes: {
-    fontSize: {
-      control: "select",
-      options: [10, 14, 18],
-    },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Button>;
+
+export const PrimaryButton: Story = {
+  args: {
+    children: "button",
   },
-};
-
-const Template = (args) => <Button {...args} />;
-
-export const PrimaryButton = Template.bind({});
-PrimaryButton.args = {
-  backgroundColor: "red",
-  children: "你好",
-};
-
-export const DashedButton = Template.bind({});
-DashedButton.args = {
-  backgroundColor: "green",
-  children: "你好sss",
-  color: "yellow",
+  render: ({ backgroundColor, children, color }) => (
+    <Button
+      backgroundColor={backgroundColor}
+      children={children}
+      color={color}
+    />
+  ),
 };

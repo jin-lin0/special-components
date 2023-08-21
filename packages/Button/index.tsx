@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import "./index.less";
 
@@ -10,8 +11,16 @@ export interface ButtonProps {
    * 按钮文字颜色
    */
   color?: string;
-  children?: React.ReactNode;
+  /**
+   * 字体大小
+   */
   fontSize?: number;
+  /**
+   * 子节点
+   */
+  children?: React.ReactNode;
+
+  onClick?: () => void;
 }
 
 const Button = ({
@@ -19,11 +28,13 @@ const Button = ({
   backgroundColor = "#C850C0",
   color = "#fff",
   fontSize = 14,
+  onClick,
 }: ButtonProps) => {
   return (
     <div
-      className="spComponents-button"
+      className={classNames(["spComponents-button", "aaa"])}
       style={{ backgroundColor: backgroundColor, color, fontSize }}
+      onClick={onClick}
     >
       {children}
     </div>
