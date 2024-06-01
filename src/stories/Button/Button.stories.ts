@@ -15,6 +15,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
+    hoverOpacity: { control: { type: "number", min: 0, max: 1, step: 0.1 } },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -26,14 +27,15 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
+    type: "primary",
     label: "Button",
-    size: "medium"
+    size: "medium",
   },
 };
 
-export const Secondary: Story = {
+export const Transport: Story = {
   args: {
+    type: "transparent",
     label: "Button",
   },
 };
@@ -52,10 +54,10 @@ export const Small: Story = {
   },
 };
 
-export const Warning: Story = {
+export const CustomColor: Story = {
   args: {
-    primary: true,
-    label: "Delete now",
+    label: "Button",
     backgroundColor: "red",
+    color: "#78f3e4",
   },
 };
