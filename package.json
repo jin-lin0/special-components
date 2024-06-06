@@ -6,11 +6,13 @@
   "files": [
     "dist"
   ],
-  "types": "./dist/index.d.ts",
+  "typings": "./dist/types/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "main": "./dist/special-components.umd.js",
   "module": "./dist/special-components.es.js",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/special-components.es.js",
       "require": "./dist/special-components.umd.js"
     }

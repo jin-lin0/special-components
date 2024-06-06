@@ -14,8 +14,8 @@ export interface ButtonProps {
 }
 
 const Button = ({
-  type = 'primary',
-  size = 'medium',
+  type,
+  size,
   backgroundColor,
   color,
   label,

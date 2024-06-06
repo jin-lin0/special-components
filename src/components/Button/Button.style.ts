@@ -22,12 +22,10 @@ export const StyledButton = styled.button<ButtonProps>`
     font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     line-height: 1;
-    background-color: ${props.theme.colors.primary};
-    color: ${props.theme.colors.text};
+    background-color: ${props.backgroundColor || props.theme.colors.primary};
+    color: ${props.color || props.theme.colors.text};
     ${types[props.type || "primary"]}
     ${sizes[props.size || "medium"]}
-  ${props.backgroundColor && `background-color: ${props.backgroundColor};`}
-  ${props.color && `color: ${props.color};`}
   &:hover {
       opacity: ${props.hoverOpacity || 0.8}; // 使用 hoverOpacity 属性控制透明度
     }
