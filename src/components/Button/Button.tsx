@@ -13,7 +13,7 @@ export interface ButtonProps {
   hoverOpacity?: number;
 }
 
-export const Button = ({
+const Button = ({
   type = 'primary',
   size = 'medium',
   backgroundColor,
@@ -36,3 +36,5 @@ export const Button = ({
     </StyledButton>
   );
 };
+
+export default Button;
