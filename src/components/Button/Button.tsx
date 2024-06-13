@@ -1,7 +1,7 @@
 import StyledButton from "./Button.style";
 
 export interface ButtonProps {
-  type?: "primary" | "transparent";
+  type?: "primary" | "transparent" | "link";
   /**
    * Text
    */

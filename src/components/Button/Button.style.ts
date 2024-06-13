@@ -26,6 +26,15 @@ const types = {
     color: #333;
     border: 1px solid #ccc;
   `,
+  link: css`
+    border: none;
+    color: ${(props) => props.theme.colors.primary};
+    background: initial;
+    &:hover {
+      text-decoration-line: underline;
+      text-underline-offset: 4px;
+    }
+  `,
 };
 
 const StyledButton = styled.button<ButtonProps>`
@@ -37,8 +46,6 @@ const StyledButton = styled.button<ButtonProps>`
     font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     line-height: 1;
-    background-color: ${props.backgroundColor || props.theme.colors.primary};
-    color: ${props.color || props.theme.colors.text};
 
     ${props.type && types[props.type]}
     ${props.size && sizes[props.size]}

@@ -16,6 +16,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: "color" },
     hoverOpacity: { control: { type: "number", min: 0, max: 1, step: 0.1 } },
+    disabledOpacity: { control: { type: "number", min: 0, max: 1, step: 0.1 } },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },

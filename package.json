@@ -1,7 +1,7 @@
 {
   "name": "special-components",
-  "version": "0.0.3",
-  "description": "组件库测试中，修复类型提示",
+  "version": "0.0.5",
+  "description": "组件库测试中，修复样式覆盖优先级，增加linkbutton",
   "type": "module",
   "files": [
     "dist"
