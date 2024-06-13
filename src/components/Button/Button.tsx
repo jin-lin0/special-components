@@ -1,35 +1,42 @@
-import { StyledButton } from "./Button.style";
+import StyledButton from "./Button.style";
 
 export interface ButtonProps {
-  type?: 'primary' | 'transparent'
+  type?: "primary" | "transparent";
   /**
-   * Cover Type's BackgroundColor 
+   * Text
    */
+  label: string;
   backgroundColor?: string;
   color?: string;
-  size?: 'small' | 'medium' | 'large';
-  label: string;
-  onClick?: () => void;
+  disabled?: boolean;
+  size?: "small" | "medium" | "large";
   hoverOpacity?: number;
+  disabledOpacity?: number;
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 const Button = ({
-  type,
-  size,
+  type = "primary",
+  size = "medium",
   backgroundColor,
   color,
   label,
   hoverOpacity = 0.8,
+  disabledOpacity = 0.5,
+  disabled = false,
   ...props
 }: ButtonProps) => {
   return (
     <StyledButton
       type={type}
       size={size}
-      backgroundColor={backgroundColor}
-      color={color}
+      style={{ backgroundColor, color }}
       hoverOpacity={hoverOpacity}
+      disabledOpacity={disabledOpacity}
       label={label}
+      disabled={disabled}
       {...props}
     >
       {label}

@@ -1,7 +1,7 @@
 {
   "name": "special-components",
-  "version": "0.0.2",
-  "description": "组件库测试中，添加ThemeProvider",
+  "version": "0.0.3",
+  "description": "组件库测试中，修复类型提示",
   "type": "module",
   "files": [
     "dist"
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.2",
+    "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.11"
