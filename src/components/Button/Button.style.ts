@@ -30,6 +30,7 @@ const types = {
     border: none;
     color: ${(props) => props.theme.colors.primary};
     background: initial;
+    text-decoration: none;
     &:hover {
       text-decoration-line: underline;
       text-underline-offset: 4px;
@@ -37,7 +38,9 @@ const types = {
   `,
 };
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button.attrs<ButtonProps>((props) => ({
+  as: props.type == "link" ? "a" : "button",
+}))`
   ${(props) => css`
     border: none;
     border-radius: 4px;
@@ -57,6 +60,10 @@ const StyledButton = styled.button<ButtonProps>`
     &:disabled {
       cursor: not-allowed;
       opacity: ${props.disabledOpacity};
+      box-shadow: none;
+      > * {
+        pointer-events: none;
+      }
     }
   `}
 `;

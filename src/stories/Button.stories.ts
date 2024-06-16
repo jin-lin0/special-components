@@ -41,6 +41,15 @@ export const Transport: Story = {
   },
 };
 
+export const Link: Story = {
+  args: {
+    type: "link",
+    label: "Button",
+    href: "https://www.baidu.com",
+    target: "__blank",
+  },
+};
+
 export const Large: Story = {
   args: {
     size: "large",

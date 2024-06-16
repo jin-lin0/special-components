@@ -1,21 +1,24 @@
 import StyledButton from "./Button.style";
 
-export interface ButtonProps {
+interface CustomButtonProps {
   type?: "primary" | "transparent" | "link";
-  /**
-   * Text
-   */
   label: string;
   backgroundColor?: string;
   color?: string;
-  disabled?: boolean;
   size?: "small" | "medium" | "large";
   hoverOpacity?: number;
+  disabled?: boolean;
   disabledOpacity?: number;
-  className?: string;
-  style?: React.CSSProperties;
-  onClick?: () => void;
 }
+
+type NativeButtonProps = Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "type"
+>;
+type NativeAnchorProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export type ButtonProps = CustomButtonProps &
+  (NativeButtonProps | NativeAnchorProps);
 
 const Button = ({
   type = "primary",
