@@ -45,7 +45,7 @@ export const Link: Story = {
   args: {
     type: "link",
     label: "Button",
-    href: "https://www.baidu.com",
+    href: "https://components.020201.xyz/",
     target: "__blank",
   },
 };
