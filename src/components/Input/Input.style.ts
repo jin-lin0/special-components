@@ -31,6 +31,7 @@ export const StyledInput = styled.input<InputProps>`
       color: transparent;
       text-shadow: 0 0 0 #000;
       box-shadow: none;
+      border-color: ${props.theme.colors.inputBorder};
     }
   `}
 `;

@@ -1,7 +1,7 @@
 {
   "name": "special-components",
-  "version": "0.0.6",
-  "description": "增加input",
+  "version": "0.0.7",
+  "description": "fix: disabled input style",
   "type": "module",
   "files": [
     "dist"
