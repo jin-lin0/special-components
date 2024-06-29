@@ -1,13 +1,8 @@
 import type { Preview } from "@storybook/react";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "../src/GlobalStyles";
 import { lightTheme } from "../src/themes";
-
-const GlobalStyles = createGlobalStyle`
-  body {
-    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-`;
 
 // https://storybook.js.org/docs/api/parameters
 const preview: Preview = {

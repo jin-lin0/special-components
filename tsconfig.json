@@ -25,6 +25,6 @@
 
     "allowJs": true
   },
-  "include": ["src"],
+  "include": ["src", "src/utils/.ig_object.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -19,3 +19,10 @@ export const Primary: Story = {
     label: "CheckBox",
   },
 };
+
+export const DefaultChecked: Story = {
+  args: {
+    label: "CheckBox",
+    defaultChecked: true,
+  },
+};
