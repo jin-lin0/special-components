@@ -1,6 +1,22 @@
 import { InputProps } from "./Input";
 import styled, { css } from "styled-components";
 
+export const StyledInputWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+`;
+
+export const PrefixIconWrapper = styled.span`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  color: ${(props) => props.theme.colors.inputIcon};
+  z-index: 1;
+`;
+
 export const StyledInput = styled.input<InputProps>`
   ${(props) => css`
     box-sizing: border-box;
@@ -12,6 +28,8 @@ export const StyledInput = styled.input<InputProps>`
     height: 32px;
     outline: none;
     padding: 6px 10px;
+
+    padding-left: ${props.prefixIcon ? "36px" : "10px"};
 
     &:hover {
       border-color: ${props.theme.colors.primary};

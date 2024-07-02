@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Input from "../components/Input/Input";
+import Input, { InputProps } from "../components/Input/Input";
 import { useArgs } from "@storybook/preview-api";
+import { FaSearch } from "react-icons/fa";
 
 const meta = {
   title: "Example/Input",
@@ -14,28 +15,37 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+function Render(args: InputProps) {
+  const [{ value }, updateArgs] = useArgs();
+
+  function onChange(e: any) {
+    updateArgs({ value: e.target.value });
+  }
+
+  return <Input onChange={onChange} value={value} {...args} />;
+}
+
 export const Primary: Story = {
   args: {},
 };
 
 export const Value: Story = {
   args: {
-    defaultValue: "123",
     value: "123",
   },
-  render: function Render(args) {
-    const [{ value }, updateArgs] = useArgs();
-
-    function onChange(e: any) {
-      updateArgs({ value: e.target.value });
-    }
-
-    return <Input onChange={onChange} value={value} {...args} />;
-  },
+  render: Render,
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
   },
+  render: Render,
+};
+
+export const PrefixIcon: Story = {
+  args: {
+    prefixIcon: <FaSearch />,
+  },
+  render: Render,
 };

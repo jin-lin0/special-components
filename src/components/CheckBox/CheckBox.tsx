@@ -9,6 +9,7 @@ export interface CheckBoxProps {
   checked?: boolean;
   label?: string;
   disabled?: boolean;
+  className?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -17,10 +18,11 @@ const CheckBox = ({
   checked,
   defaultChecked,
   disabled,
+  className,
   onChange,
 }: CheckBoxProps) => {
   return (
-    <StyledCheckBoxContainer disabled={disabled}>
+    <StyledCheckBoxContainer disabled={disabled} className={className}>
       <StyledCheckBoxInput
         type="checkbox"
         checked={checked}
