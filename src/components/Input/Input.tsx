@@ -12,15 +12,21 @@ export interface InputProps
   disabled?: boolean;
 }
 
-const Input = ({ prefixIcon, onChange, value, ...props }: InputProps) => {
+const Input = ({
+  prefixIcon,
+  onChange,
+  value,
+  defaultValue,
+  ...props
+}: InputProps) => {
   const [isComposing, setIsComposing] = useState(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.value = value || "";
+      inputRef.current.value = value ?? defaultValue ?? "";
     }
-  }, [value]);
+  }, [value, defaultValue]);
 
   const handleCompositionStart = () => {
     setIsComposing(true);

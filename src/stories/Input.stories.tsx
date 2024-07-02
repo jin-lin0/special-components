@@ -27,11 +27,12 @@ function Render(args: InputProps) {
 
 export const Primary: Story = {
   args: {},
+  render: Render,
 };
 
 export const Value: Story = {
   args: {
-    value: "123",
+    defaultValue: "123",
   },
   render: Render,
 };

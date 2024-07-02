@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import CheckBox from "../components/CheckBox/CheckBox";
+import { useArgs } from "@storybook/preview-api";
+import CheckBox, { CheckBoxProps } from "../components/CheckBox/CheckBox";
 
 const meta = {
   title: "Example/CheckBox",
@@ -14,10 +14,20 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+function Render(args: CheckBoxProps) {
+  const [{ checked }, updateArgs] = useArgs();
+  function onChange() {
+    updateArgs({ checked: !checked });
+  }
+
+  return <CheckBox onChange={onChange} checked={checked} {...args} />;
+}
+
 export const Primary: Story = {
   args: {
     label: "CheckBox",
   },
+  render: Render,
 };
 
 export const DefaultChecked: Story = {
@@ -25,4 +35,5 @@ export const DefaultChecked: Story = {
     label: "CheckBox",
     defaultChecked: true,
   },
+  render: Render,
 };

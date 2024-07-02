@@ -1,7 +1,7 @@
 {
   "name": "special-components",
-  "version": "0.0.8",
-  "description": "feat: handle chinese input",
+  "version": "0.0.9",
+  "description": "fix: input defaultValue",
   "type": "module",
   "files": [
     "dist"
