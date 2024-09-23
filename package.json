@@ -1,7 +1,7 @@
 {
   "name": "special-components",
-  "version": "0.0.9",
-  "description": "fix: input defaultValue",
+  "version": "0.0.10",
+  "description": "feat: box & list",
   "type": "module",
   "files": [
     "dist"
