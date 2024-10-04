@@ -15,11 +15,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const renderItem = (item: any, _: number) => (
+  <div style={{ padding: "10px" }}>{`${item.id}___${item.name}`}</div>
+);
+
 export const Primary: Story = {
   args: {
-    itemKey: "id",
-    itemValue: "name",
-    step: 5,
     data: [
       {
         id: 10000,
@@ -274,10 +275,11 @@ export const Primary: Story = {
         name: "a62",
       },
     ],
+    renderItem,
   },
   decorators: [
     (Story) => (
-      <div style={{ height: "320px", overflow: "auto" }}>
+      <div style={{ height: "500px", overflow: "auto" }}>
         <Story />
       </div>
     ),

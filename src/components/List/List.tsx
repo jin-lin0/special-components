@@ -1,41 +1,30 @@
+import Box from "../Box/Box";
 import InfiniteScroll from "../InfiniteScroll/InfiniteScroll";
-import { StyledItem, StyledList } from "./List.style";
-
-export interface ListItem {
-  id: string | number;
-  [key: string]: any;
-}
+import { StyledList } from "./List.style";
 
 export interface ListProps<T> {
   data: T[];
-  itemKey?: keyof T | ((item: T) => string);
-  itemValue?: keyof T | ((item: T) => string);
-  onItemClick?: (item: T, index: number) => void;
   step?: number;
-  showIndex?: boolean;
+  renderItem?: (item: T, index: number) => React.ReactNode;
+  split?: boolean;
 }
 
-const List = <T extends ListItem>({
+const List = <T,>({
   data,
-  itemKey,
-  itemValue,
-  onItemClick,
-  step = 10,
-  showIndex = true,
+  step = 999,
+  renderItem,
+  split = true,
 }: ListProps<T>) => {
-  const listData = data || [];
-
   return (
     <StyledList>
-      <InfiniteScroll items={listData} step={step}>
+      <InfiniteScroll items={data || []} step={step}>
         {(item, index) => (
-          <StyledItem
-            key={itemKey ? item[itemKey as keyof T] : index}
-            onClick={onItemClick && (() => onItemClick(item, index))}
-          >
-            {showIndex && `${index + 1}. `}
-            {itemValue ? item[itemValue as keyof T] : item}
-          </StyledItem>
+          <Box key={index}>
+            {renderItem && renderItem(item, index)}
+            {split && index < data.length - 1 && (
+              <div style={{ height: "1px", backgroundColor: "#ccc" }} /> // 分割线
+            )}
+          </Box>
         )}
       </InfiniteScroll>
     </StyledList>

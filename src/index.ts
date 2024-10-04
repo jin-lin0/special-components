@@ -10,5 +10,7 @@ export type { InfiniteScrollProps } from "./components/InfiniteScroll/InfiniteSc
 export { default as InfiniteScroll } from "./components/InfiniteScroll/InfiniteScroll";
 export type { ListProps } from "./components/List/List";
 export { default as List } from "./components/List/List";
+export type { VirtualListProps } from "./components/VirtualList/VirtualList";
+export { default as VirtualList } from "./components/VirtualList/VirtualList";
 export { default as ThemeProviderWrapper } from "./ThemeProviderWrapper";
 export { default as Globalstyles } from "./GlobalStyles";

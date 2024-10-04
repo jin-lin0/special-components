@@ -5,7 +5,3 @@ export const StyledList = styled.ul`
   margin: 0;
   padding: 0;
 `;
-
-export const StyledItem = styled.div`
-  cursor: ${(props) => (props.onClick ? "pointer" : "default")};
-`;

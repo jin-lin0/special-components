@@ -8,7 +8,7 @@ export interface InfiniteScrollProps<T> {
 
 const InfiniteScroll = <T,>({
   items = [],
-  step = 10,
+  step,
   children,
 }: InfiniteScrollProps<T>) => {
   const [visibleItems, setVisibleItems] = useState<T[]>([]);
